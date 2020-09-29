@@ -1,11 +1,11 @@
-" the ownership of this config is uhmm... complicated
+ "the ownership of this config is uhmm... complicated
 " my config --> somi's new nvim config starter --> my config ded --> i take
 " somi's 🙃
 
 " UTF-8 😤
 scripte utf-8
 
-" Because
+" Because (yea we don't really know why this is here . . .)
 syntax on
 filetype plugin indent on
 
@@ -30,10 +30,10 @@ set hlsearch
 set wildmenu
 set showmatch
 
-" Apparently long line bad 🙄
-set colorcolumn=80
+" Apparently long line bad 🙄 (agreed.)
+set colorcolumn=90
 
-" Leader key is comma because idk why
+" Leader key is comma because idk why (originally from my config)
 let mapleader = ","
 
 " Plugins owo
@@ -42,8 +42,11 @@ call plug#begin('~/.local/share/nvim/plugged')
 " Python
 Plug 'davidhalter/jedi-vim'
 
-"Epic theme
-Plug 'kaicataldo/material.vim', { 'branch': 'main' }
+"Epic theme (nah i don't like this)
+"Plug 'kaicataldo/material.vim', { 'branch': 'main' }
+
+"Much epicer theme imo
+Plug 'ayu-theme/ayu-vim'
 
 " Fast grep
 Plug 'jremmen/vim-ripgrep'
@@ -53,18 +56,21 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': 
 
 " Epic Undo
 Plug 'mbbill/undotree'
+
+"bhyi why put airline in undo smh
 Plug 'vim-airline/vim-airline'
 
 " Pair the brackets and quotes pls kthx
 Plug 'jiangmiao/auto-pairs'
 
-" idk what this does tbh
+" idk what this does tbh | wow bhai this is like the most epic plugin lel
 Plug 'scrooloose/nerdcommenter'
 
-" Ig this formats stuff? idk looks like some indent thing
+" Ig this formats stuff? idk looks like some indent thing (yes)
 Plug 'sbdchd/neoformat'
 
-" Highlight what I just yanked because I have no idea how to vim
+" Highlight what I just yanked because I have no idea how to vim (same bro
+" same)
 Plug 'machakann/vim-highlightedyank'
 
 " Use nerdtree with a nice little git plugin
@@ -75,15 +81,19 @@ Plug 'scrooloose/nerdtree' |
 " Find the files plss
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
-" Autocomplete
+" Autocomplete (vvvepic would recommened 💯)
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-" I dont even use typescript lmao
-Plug 'leafgarland/typescript-vim'
-Plug 'peitalin/vim-jsx-typescript'
+" I dont even use typescript lmao (me neither lel)
+"Plug 'leafgarland/typescript-vim'
+"Plug 'peitalin/vim-jsx-typescript'
 
 " I dont use any of these themes but idk why theyre still here
+" i do bhyi and it is epic
 Plug 'vim-airline/vim-airline-themes', {'branch': 'master'}
+
+" vibe zone comding
+Plug 'junegunn/goyo.vim'
 
 call plug#end()
 
@@ -115,7 +125,12 @@ let g:neoformat_basic_format_trim = 1
 
 " File drawer:
 " Use Ctrl+B because I am vscode boi
+" Ctrl+B bad (bonk), use something faster
 nnoremap <silent> <C-b> :NERDTreeToggle<CR>
+
+" <leader>g to go into 'd epic vibe zone comding zone'
+nnoremap <silent> <leader>g :Goyo<cr>
+
 " Show hidden files, show smol UI, dont ignore anything, and turn off
 " statusline
 let g:NERDTreeShowHidden = 1
@@ -137,12 +152,21 @@ nmap <C-K> <plug>NERDCommenterToggle
 " Open new split panes to right and below
 set splitright
 set splitbelow
+
+"split navigations 
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+"this won't work CL --> terminal
+""nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
 " Turn terminal to normal mode with escape
 tnoremap <Esc> <C-\><C-n>
+
 " Always start terminal in insert mode
 au BufEnter * if &buftype == 'terminal' | :startinsert | endif
 
-" Toggle terminal on Ctrl+L
+" Toggle terminal on Ctrl+L (thankq somi for this uwu)
 let s:term_buf_nr = -1
 function! s:ToggleTerminal() abort
     if s:term_buf_nr == -1
@@ -275,7 +299,7 @@ let g:coc_global_extensions = [
 
 set updatetime=300
 
-" don't give |ins-completion-menu| messages.
+" don't give |ins-completion-menu| messages (very important thank)
 set shortmess+=c
 
 " always show signcolumns
@@ -336,8 +360,17 @@ nnoremap <C-i> :call CocAction('format')<CR>
 nmap <C-F> <Plug>(coc-fix-current)
 
 " Colorscheme stuff
-let g:material_terminal_italics = 1
-let g:material_theme_style = 'ocean'
-colorscheme material
-let g:airline_theme='material'
+set termguicolors
+let ayucolor="dark"
+colorscheme ayu
+" IndentLine {{
+let g:indentLine_char = ''
+let g:indentLine_first_char = ''
+let g:indentLine_showFirstIndentLevel = 1
+let g:indentLine_setColors = 0
+" }}
+"let g:material_terminal_italics = 1
+"let g:material_theme_style = 'ocean'
+"colorscheme material
+"let g:airline_theme='material'
 
