@@ -1,6 +1,6 @@
- "the ownership of this config is uhmm... complicated
-" my config --> somi's new nvim config starter --> my config ded --> i take
-" somi's 🙃
+"the ownership of this config is uhmm... complicated
+" my config (initially forked/inspired by dotangad's dotvim) --> 
+" somi's new nvim config starter --> my config ded --> i take somi's 🙃
 
 " UTF-8 😤
 scripte utf-8
