@@ -84,9 +84,9 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 " Autocomplete (vvvepic would recommened 💯)
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-" I dont even use typescript lmao (me neither lel)
-"Plug 'leafgarland/typescript-vim'
-"Plug 'peitalin/vim-jsx-typescript'
+" I dont even use typescript lmao (i do bhyi sorry f abhi yaad aaya)
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
 
 " I dont use any of these themes but idk why theyre still here
 " i do bhyi and it is epic
